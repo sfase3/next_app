@@ -27,6 +27,21 @@
       }
 }
 
+@media screen and (max-width: 430px) {
+      
+      .header_item{
+            text-align: center;
+            float: none;
+            
+            a {
+                  width: 50px;
+                  margin: 5px;
+            }
+
+      }
+
+    }
+
 .a_active{
       
       color: rgb(96, 168, 230);

@@ -1,6 +1,7 @@
 import axios from "axios"
 import Head from "next/head"
 import { useState,useEffect } from "react"
+import Link from "next/link"
 
 export const getStaticProps = async() =>{
       const response = await axios.get('https://jsonplaceholder.typicode.com/users')
@@ -10,7 +11,7 @@ export const getStaticProps = async() =>{
       }
 }
 
-const Posts = ({users}) => {
+const Users = ({users}) => {
 
      
 
@@ -24,7 +25,10 @@ const Posts = ({users}) => {
             <div>
                   {users && users.map(({id,name,email}) =>{
                         return(
-                              <div key={id}>{name} {email}</div>
+                              <footer key={id}>
+                                <Link href={`/users/${id}`}>{name}
+                                </Link>
+                                </footer>
                         )
                   })
                   }
@@ -33,4 +37,4 @@ const Posts = ({users}) => {
       )
 }
 
-export default Posts
+export default Users
