@@ -25,10 +25,10 @@ const Users = ({users}) => {
             <div>
                   {users && users.map(({id,name,email}) =>{
                         return(
-                              <footer key={id}>
+                              <div key={id}>
                                 <Link href={`/users/${id}`}>{name}
                                 </Link>
-                                </footer>
+                                </div>
                         )
                   })
                   }
